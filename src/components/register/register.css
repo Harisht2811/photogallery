@@ -1,0 +1,31 @@
+body{
+    margin:0;
+    padding: 0;
+}
+.registerForm{
+    padding:15%;
+    text-align: center;
+    background-color: black;
+}
+.form-control{
+    width:30%;
+    display: block;
+    margin-left: 35%;
+}
+.form-control:focus{
+    border: none;
+    box-shadow: none;
+}
+
+.btn-primary{
+    width:30%;
+    margin-left: 35%;
+    margin-top: 5%;
+}
+.form-label{
+    margin-top:1%;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+

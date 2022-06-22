@@ -1,0 +1,81 @@
+.navbar{
+    background-color:pink;
+}
+.navbar h1{
+    font-size: 25px;
+    color: black;
+    text-align: right;
+    margin: 1% 45.5%;
+}
+.navbar a{
+    text-align: right;
+}
+.navbar .nav-link{
+    width:80%;
+    margin: -3.5% 0% 0% 80%;
+}
+.nav-button{
+    display: flex;
+}
+#accordion{
+    border:none;
+}
+
+
+#accordion .btn-text{
+    background-color: pink;
+    outline: none;
+    border:none;
+    box-shadow: none;
+}
+.uploadImages{
+    padding: 2%;
+    text-align: center;
+}
+.uploadImages h1{
+    font-family: 'Montserrat';
+}
+.uploadImages button{
+    margin: 1%;
+    width:20%;
+    background-color: pink;
+    outline: none;
+    border:none;
+    box-shadow: none;
+    color: black;
+}
+.uploadImages button:hover{
+    text-decoration: none;
+    background-color: pink !important;
+    color: black;
+}
+.uploadImages p{
+    font-size: 30px;
+    font-family: 'Montserrat';
+    opacity: 0.5;
+    margin-left: -3%;
+}
+
+.images{
+    margin:1% 4%;
+    overflow-y: scroll;
+    height:50vh;
+    overflow-x: hidden;
+
+}
+ .filterImages{
+    display: flex;
+    margin:0 35% ;
+}
+.images img{
+    width: 50%;
+    height: 50%;
+    margin:2% 4%;
+}
+.uploadedImages {
+    width: 50%;
+    height: 50%;
+}
+.conatiner-md{
+    padding: 2%;
+}
