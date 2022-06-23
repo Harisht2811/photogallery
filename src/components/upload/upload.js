@@ -99,6 +99,28 @@ function Upload() {
                            
             )
           }
+          else if ((searchFromDate) !=0 ) {
+            console.log("inside get filter data if",userImage);
+        //return userImage.filter(
+            
+        //   return userImage.filter (obj => obj.uploadedDate >= searchFromDate && obj.uploadedDate <= searchToDate)
+         return userImage.filter (obj => 
+            obj.uploadedDate >= searchFromDate 
+          //obj => obj.fileName.toLowerCase().includes(searchItem.toLowerCase());
+                       
+        )
+      }
+      else if ((searchToDate) !=0 ) {
+        console.log("inside get filter data if",userImage);
+    //return userImage.filter(
+        
+    //   return userImage.filter (obj => obj.uploadedDate >= searchFromDate && obj.uploadedDate <= searchToDate)
+     return userImage.filter (obj => 
+        obj.uploadedDate <= searchToDate 
+      //obj => obj.fileName.toLowerCase().includes(searchItem.toLowerCase());
+                   
+    )
+  }
           else if (searchItem.length >0){
             return userImage.filter(
                 obj => obj.fileName.toLowerCase().includes(searchItem.toLowerCase())
@@ -109,14 +131,7 @@ function Upload() {
 
     }
     
-    // const getFilterData=()=>{
-    //      if(searchItem.length>0){
-    //          return userImage.filter(
-    //             obj => obj.fileName.toLowerCase().includes(searchItem.toLowerCase())
-    //          )
-    //      }
-    //     return userImage;
-    // }
+   
 
     function logOut() {
         navigate('/login');
@@ -147,9 +162,9 @@ function Upload() {
                         <button type="file" onClick={uploadImages} class="btn btn-info btn-lg"> Upload</button>
                         <p>Start uploading here</p>
                         <div className='filterImages'>
-                          From Date: <input type="date" dateFormat onChange={e=>setSearchFromDate(e.target.value)}  ></input>
-                          To Date:   <input type="date" onChange={e=>setSearchToDate(e.target.value)}></input>
-                          File Name:  <input type="text" onChange={e => setSearchItem(e.target.value)} ></input>
+                          <label>From Date: </label><input type="date" dateFormat onChange={e=>setSearchFromDate(e.target.value)}  ></input>
+                          <label>To Date: </label>   <input type="date" onChange={e=>setSearchToDate(e.target.value)}></input>
+                          <label>File Name: </label>  <input type="text" onChange={e => setSearchItem(e.target.value)} ></input>
 
                         </div>
                     </div>
@@ -159,7 +174,12 @@ function Upload() {
                         <div className='conatiner-md border'>
                             <div className=' row row-cols-1 row-cols-sm-2 row-cols-md-5'>
                                 {getFilterData().map(obj => {
-                                    return <img className='uploadedImages'  src={obj.url} alt="userImages" />;
+                                    return (
+                                        <>
+                                        <img className='uploadedImages'  src={obj.url} alt="userImages" />
+                                        <p>{obj.fileName}</p>
+                                        </>
+                                    );
                                 })}
                              
                                 
