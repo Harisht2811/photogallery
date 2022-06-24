@@ -26,7 +26,6 @@ function Upload() {
 
 
     const imageListRef = ref(storage, "images/");
-    // console.log(imageListRef);
     let email = auth.currentUser.email;
     // const usersCollectionRef = collection(db, "user_images");
     const uploadImages =() => {
@@ -72,13 +71,12 @@ function Upload() {
         console.log(sp)
                     let data = sp.data();
                     console.log(data)
-
                     if(data === undefined){
                         setDoc(doc(db, "user_images", email), {
                         
                        }); 
                     }
-                    setUserImage(data.userImageDetails)
+                    setUserImage(data.userImageDetails);
                   
     };
     const getFilterData=()=>{
@@ -90,34 +88,25 @@ function Upload() {
         }
         else if ((searchFromDate && searchToDate) !=0 ) {
                 console.log("inside get filter data if",userImage);
-            //return userImage.filter(
                 
-            //   return userImage.filter (obj => obj.uploadedDate >= searchFromDate && obj.uploadedDate <= searchToDate)
              return userImage.filter (obj => 
                 obj.uploadedDate >= searchFromDate && obj.uploadedDate <= searchToDate
-              //obj => obj.fileName.toLowerCase().includes(searchItem.toLowerCase());
                            
             )
           }
           else if ((searchFromDate) !=0 ) {
             console.log("inside get filter data if",userImage);
-        //return userImage.filter(
             
-        //   return userImage.filter (obj => obj.uploadedDate >= searchFromDate && obj.uploadedDate <= searchToDate)
          return userImage.filter (obj => 
             obj.uploadedDate >= searchFromDate 
-          //obj => obj.fileName.toLowerCase().includes(searchItem.toLowerCase());
                        
         )
       }
       else if ((searchToDate) !=0 ) {
         console.log("inside get filter data if",userImage);
-    //return userImage.filter(
         
-    //   return userImage.filter (obj => obj.uploadedDate >= searchFromDate && obj.uploadedDate <= searchToDate)
      return userImage.filter (obj => 
         obj.uploadedDate <= searchToDate 
-      //obj => obj.fileName.toLowerCase().includes(searchItem.toLowerCase());
                    
     )
   }
@@ -178,6 +167,7 @@ function Upload() {
                                         <>
                                         <img className='uploadedImages'  src={obj.url} alt="userImages" />
                                         <p>{obj.fileName}</p>
+                                        
                                         </>
                                     );
                                 })}
@@ -185,8 +175,8 @@ function Upload() {
                                 
                             </div>
                         </div>
-                        <div>{searchFromDate}</div>
-                        <div>{searchToDate}</div>
+                        {/* <div>{searchFromDate}</div>
+                        <div>{searchToDate}</div> */}
 
 
 

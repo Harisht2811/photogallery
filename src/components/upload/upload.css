@@ -75,8 +75,11 @@
     border-bottom: 2px solid pink; 
 }
 .images img{
-    height: 15vh;
+    height: 50vh;
     margin:2% 4%;
+}
+.images p{
+    margin-left: -300px;
 }
 .uploadedImages {
     width: 50%;
